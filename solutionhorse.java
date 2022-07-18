@@ -18,7 +18,7 @@ public class solutionhorse {
     }
 
     // Рекурсивная функция для выполнения обхода коня доски
-    public static void knightTour(int[][] visited, int x, int y, int pos) {
+    public static void horseMove(int[][] visited, int x, int y, int pos) {
         System.out.println(x * visited.length + y + 1); // вывод номера квадрата
 
         visited[x][y] = pos;
@@ -34,7 +34,7 @@ public class solutionhorse {
 
                 // если новая позиция действительна и еще не посещена
                 if (isValid(newX, newY) && visited[newX][newY] == 0) {
-                    knightTour(visited, newX, newY, pos + 1);
+                    horseMove(visited, newX, newY, pos + 1);
                 }
             }
         }
@@ -46,6 +46,6 @@ public class solutionhorse {
         int pos = 1;
 
         // начинаем обход конем с углового квадрата `(0, 0)` позиция 1
-        knightTour(visited, 0, 0, pos);
+        horseMove(visited, 0, 0, pos);
     }
 }
